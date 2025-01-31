@@ -13,5 +13,5 @@
  * + pin: The pin number where the LED is connected.
  * + fadeIn: A boolean that specifies whether the LED should fade in (true) or fade out (false).
 
-## the function gradually increases or decreases the brightnessLevel of the LED, stepping by fadeValue (5 for fading in, for fading out). The analogWrite() function is used to set the LED brightness, and the function uses a 20ms delay to control the speed of the fade effect.
+The function gradually increases or decreases the brightnessLevel of the LED, stepping by fadeValue (5 for fading in, for fading out). The analogWrite() function is used to set the LED brightness, and the function uses a 20ms delay to control the speed of the fade effect.
  
