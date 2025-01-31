@@ -1,7 +1,7 @@
 #Code Explanation:
 
 1. int timer = 1000;
-*Initializes a variable timer to store the delay duration (in milliseconds).
+* Initializes a variable timer to store the delay duration (in milliseconds).
 *The value 1000 means a 1-second delay.
 
 2. setup() function:
