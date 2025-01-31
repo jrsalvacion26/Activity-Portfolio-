@@ -10,5 +10,5 @@
 
 3. fadeLED():
 * Parameters:
-*, + pin: The pin number where the LED is connected.
-*, + fadeIn: A boolean that specifies whether the LED should fade in (true) or fade out (false).
+* + pin: The pin number where the LED is connected.
+* + fadeIn: A boolean that specifies whether the LED should fade in (true) or fade out (false).
