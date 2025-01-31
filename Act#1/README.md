@@ -1,4 +1,6 @@
-# Code Explanation:
+# Arduino Light Sequence 
+
+## Code Explanation:
 
 1. int timer = 1000;
   * Initializes a variable timer to store the delay duration (in milliseconds).
