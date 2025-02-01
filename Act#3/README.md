@@ -1,5 +1,6 @@
+# Arduino Basic Sensor
 
-# Code Explanation:
+## Code Explanation:
 
 
 1. Global Variables:
