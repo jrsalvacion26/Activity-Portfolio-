@@ -1,4 +1,6 @@
-# Code Explanation:
+# Arduino Fade LED
+
+## Code Explanation:
 
 1. setup():
 * The setup() function runs once at the start of the program.
