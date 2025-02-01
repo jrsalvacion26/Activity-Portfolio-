@@ -15,7 +15,7 @@
     * Sets the buzzer pin as an output, allowing the microcontroller to control the buzzer.
 
 
-1. loop() Function:
+3. loop() Function:
 + Analog Reads:
 
     * potValue = analogRead(potPin): Reads the value from the potentiometer (range 0-1023) and stores it in potValue.
