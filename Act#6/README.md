@@ -41,6 +41,16 @@ This introduces a small 100-millisecond delay to prevent flooding the serial mon
 
 #### API
 
+1. Startup Event:
+
+* @app.on_event("startup"):
+- This decorator registers a function that will run when the FastAPI application starts up (i.e., when the server starts).
+
+serial.Serial('COM5', 9600, timeout=1): This opens a serial connection to the Arduino. The 'COM5' refers to the serial port the Arduino is connected to (on Windows). The baud rate is set to 9600, and a timeout of 1 second is applied for reading/writing to the serial port.
+
+time.sleep(2): This introduces a 2-second delay to give the Arduino time to initialize before attempting communication.
+
+Exception Handling: If the serial connection cannot be established, an exception (serial.SerialException) will be caught, and an error message will be printed.
 
 
 ### LED
