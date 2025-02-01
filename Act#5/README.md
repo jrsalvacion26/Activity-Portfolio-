@@ -1,4 +1,6 @@
-# Code Explanation 
+# Arduino Light Intensity
+
+## Code Explanation 
 
 1. Global Variables:
 * photoResistorPin: Pin connected to the photoresistor (light sensor).
