@@ -1,4 +1,6 @@
-# Code Explanation 
+# Arduino Serial Connection 
+
+## Code Explanation 
 
 
 1. Global Variables:
