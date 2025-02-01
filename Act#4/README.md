@@ -27,3 +27,17 @@ threshold: Sets the light intensity level that will trigger the LED blinking. If
         * delay(100): Waits for 100 milliseconds, keeping the LED on for a brief moment.
         * digitalWrite(ledPin, LOW): Turns the LED off (sets the ledPin to LOW).
         * delay(100): Waits for another 100 milliseconds, keeping the LED off for the same amount of time. This creates a blinking effect.
+
++ Serial Command to Stop Blinking:
+
+    * if (Serial.available() > 0): Checks if there's data available from the Serial Monitor (i.e., if the user has typed something and pressed Enter).
+
+    * String input = Serial.readString(): Reads the incoming serial data as a string.
+
+    * input.trim(): Removes any leading or trailing spaces from the input string.
+
+    * Stop Command:
+
+        * if (input.equalsIgnoreCase("stop")): If the input string equals "stop" (case insensitive), it:
+            * Sets shouldBlink = false, stopping the LED from blinking.
+            * Turns the LED off by calling digitalWrite(ledPin, LOW).
