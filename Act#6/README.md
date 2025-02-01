@@ -43,15 +43,42 @@ This introduces a small 100-millisecond delay to prevent flooding the serial mon
 
 1. Startup Event:
 
-* @app.on_event("startup"):
-- This decorator registers a function that will run when the FastAPI application starts up (i.e., when the server starts).
+* @app.on_event("startup"): This decorator registers a function that will run when the FastAPI application starts up (i.e., when the server starts).
 
-serial.Serial('COM5', 9600, timeout=1): This opens a serial connection to the Arduino. The 'COM5' refers to the serial port the Arduino is connected to (on Windows). The baud rate is set to 9600, and a timeout of 1 second is applied for reading/writing to the serial port.
+* serial.Serial('COM5', 9600, timeout=1): This opens a serial connection to the Arduino. The 'COM5' refers to the serial port the Arduino is connected to (on Windows). The baud rate is set to 9600, and a timeout of 1 second is applied for reading/writing to the serial port.
 
-time.sleep(2): This introduces a 2-second delay to give the Arduino time to initialize before attempting communication.
+* time.sleep(2): This introduces a 2-second delay to give the Arduino time to initialize before attempting communication.
 
-Exception Handling: If the serial connection cannot be established, an exception (serial.SerialException) will be caught, and an error message will be printed.
+* Exception Handling: If the serial connection cannot be established, an exception (serial.SerialException) will be caught, and an error message will be printed.
 
+2. Shutdown Event:
+
+* @app.on_event("shutdown"): This decorator registers a function that will run when the FastAPI application shuts down (i.e., when the server is stopped).
+
+* arduino.close(): If the serial connection is open, this will close the connection when the app shuts down to properly release the serial port.
+
+#### API ENDPOINTS
+
+1. LED ON:
+* @app.post("/led/on"): This defines a POST endpoint at /led/on which turns the LED on.
+
+* arduino.write(b'1'): This sends the byte b'1' over the serial connection to the Arduino. The Arduino is programmed to turn the LED on when it receives this command.
+
++ Response:
+    * If the serial connection is open, the LED is turned on and the response will be {"status": "success", "message": "LED turned ON"}.
+    * If the serial connection is not open, the response will indicate an error: {"status": "error", "message": "Serial connection is not open."}.
+
+
+2. LED OFF
+
+* @app.post("/led/off"): This defines a POST endpoint at /led/off which turns the LED off.
+
+* arduino.write(b'0'): This sends the byte b'0' over the serial connection to the Arduino. The Arduino is programmed to turn the LED off when it receives this command.
+
++ Response:
+
+    * If the serial connection is open, the LED is turned off and the response will be {"status": "success", "message": "LED turned OFF"}.
+    * If the serial connection is not open, the response will indicate an error: {"status": "error", "message": "Serial connection is not open."}.
 
 ### LED
 
